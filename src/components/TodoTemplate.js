@@ -3,7 +3,6 @@ import TodoHeader from './TodoHeader';
 import TodoMain from './TodoMain';
 import TodoInput from './TodoInput';
 import './scss/TodoTemplate.scss';
-import { Title } from '@mui/icons-material';
 
 const TodoTemplate = () => {
   // 서버에 할 일 목록(json)을 요청(fetch)해서 받아와야 함. -> 나중에 하자.
@@ -68,12 +67,38 @@ const TodoTemplate = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // 할 일 체크 처리 함수
+  // const checkTodo = (id) => {
+  //   if(todos.done === true){
+
+  //   }
+  // };
+  const checkTodo = (id) => {
+    // const copyTodos = [...todos];
+    // for (let cTodo of copyTodos) {
+    //   if (cTodo.id === id) {
+    //     cTodo.done = !cTodo.done;
+    //   }
+    // }
+    // setTodos(copyTodos);
+
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
+    );
+  };
+
+  // 체크가 안 된 할 일의 개수 카운트 하기
+  const countRestTodo = () => todos.filter((todo) => !todo.done).length;
+
   return (
     <div className='TodoTemplate'>
-      <TodoHeader />
+      <TodoHeader count={countRestTodo} />
       <TodoMain
         todoList={todos}
         remove={removeTodo}
+        check={checkTodo}
       />
       <TodoInput addTodo={addTodo} />
     </div>
