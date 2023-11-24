@@ -9,7 +9,7 @@ const TodoItem = ({ item, remove, check }) => {
     <li className='todo-list-item'>
       <div
         className={cn('check-circle', { active: done })} //done이 발생될 때마다 active 클래스 추가.
-        onClick={() => check(id)}
+        onClick={() => check(id, done)}
       >
         <MdDone />
       </div>
