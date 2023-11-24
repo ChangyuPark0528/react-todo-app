@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdAdd } from 'react-icons/md';
-import './scss/TodoInput.scss';
+import '../scss/TodoInput.scss';
 import cn from 'classnames';
 
 const TodoInput = ({ addTodo }) => {

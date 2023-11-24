@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TodoHeader from './TodoHeader';
 import TodoMain from './TodoMain';
 import TodoInput from './TodoInput';
-import './scss/TodoTemplate.scss';
+import '../scss/TodoTemplate.scss';
 import { json } from 'react-router-dom';
 
 const TodoTemplate = () => {
