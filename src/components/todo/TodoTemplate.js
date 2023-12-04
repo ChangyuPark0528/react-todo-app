@@ -68,6 +68,8 @@ const TodoTemplate = () => {
       setTodos(json.todos);
     } else if (res.status === 401) {
       alert('일반 회원은 일정 등록이 5개로 제한됩니다.');
+    } else if (res.status === 400) {
+      alert('2글자 이상의 할 일을 입력해 주세요');
     }
 
     // fetch(API_BASE_URL, {
