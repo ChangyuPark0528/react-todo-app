@@ -31,7 +31,7 @@ const App = () => {
               element={<Join />}
             />
             <Route
-              path='/auth/redirected/kakao'
+              path='/oauth/redirected/kakao'
               element={<KakaoLoginHandler />}
             />
           </Routes>
