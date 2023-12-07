@@ -168,6 +168,7 @@ const TodoTemplate = () => {
 
   useEffect(() => {
     // 페이지가 처음 렌더링 됨과 동시에 할 일 목록을 서버에 요청해서 뿌려 주겠습니다.
+
     fetch(API_BASE_URL, {
       method: 'GET',
       headers: requestHeader,
